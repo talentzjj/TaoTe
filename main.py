@@ -4,15 +4,15 @@ import numpy as np
 
 #===================================== inpu args =====================================
 
-file_name1 = '业务管理-淘特(伙聚版)-BD信息下载-2022-07-03 (1).xlsx'
-file_name2 = '0702-伙聚数据.xlsx'
-file_name3 = '行为数据_220703_091210_589.xlsx'
-file_name4 = '质量等级2213994253594_220703_27302.xlsx'
+file_name1 = '业务管理-淘特(伙聚版)-BD信息下载-2022-07-04.xlsx'
+file_name2 = '0703-伙聚数据.xlsx'
+file_name3 = '行为数据_220704_103823_120.xlsx'
+file_name4 = '质量等级2213994253594_220704_31011.xlsx'
 
-yesterday = pd.Timestamp('2022-07-02')
+yesterday = pd.Timestamp('2022-07-03')
 
-output_name1 = '0702用户行为.xlsx'
-output_name2 = '0702行为数据.xlsx'
+output_name1 = '0703用户行为.xlsx'
+output_name2 = '0703行为数据.xlsx'
 
 #===================================== read =========================================
 
