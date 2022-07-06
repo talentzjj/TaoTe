@@ -89,12 +89,13 @@ for i,r in d2.iterrows():
     d2.loc[i, '零钱包付款比例'] = (d['是否零钱包支付'] == '是').sum() / d['是否零钱包支付'].shape[0]
     d2.loc[i, '首登比例'] = (d['是否新登'] == '是').sum() / d['是否新登'].shape[0]
     d2.loc[i, '退款率'] = (d['30日内是否退款'] == '是').sum() / d['30日内是否退款'].shape[0]
-    d2.loc[i, '是否规范操作'] = (d['是否规范操作'] == '是').sum() / d['30日内是否退款'].shape[0]
+    d2.loc[i, '规范率'] = (d['是否规范操作'] == '是').sum() / d['是否规范操作'].shape[0]
 
 D2 = d2
 D2['零钱包付款比例'] = D2['零钱包付款比例'].map(lambda x: format(x,'.2%'))
 D2['首登比例'] = D2['首登比例'].map(lambda x: format(x,'.2%'))
 D2['退款率'] = D2['退款率'].map(lambda x: format(x,'.2%'))
+D2['规范率'] = D2['规范率'].map(lambda x: format(x,'.2%'))
 D2['日期'] = D2['日期'].dt.strftime('%Y-%m-%d')
 
 D2['业务员id'] = D2['业务员id'].astype(str)
