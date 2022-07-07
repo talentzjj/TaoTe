@@ -86,7 +86,7 @@ for i,r in d2.iterrows():
     d2.loc[i, '一级渠道'] = d['一级渠道'].iloc[0]
 
     d = d3[d3['业务员id']==ID]
-    d2.loc[i, '零钱包付款比例'] = (d['是否零钱包支付'] == '是').sum() / d['是否零钱包支付'].shape[0]
+    round（d2.loc[i, '零钱包付款比例'] = (d['是否零钱包支付'] == '是').sum() / d['是否零钱包支付']，4）.shape[0]
     d2.loc[i, '首登比例'] = (d['是否新登'] == '是').sum() / d['是否新登'].shape[0]
     d2.loc[i, '退款率'] = (d['30日内是否退款'] == '是').sum() / d['30日内是否退款'].shape[0]
     d2.loc[i, '规范率'] = (d['是否规范操作'] == '是').sum() / d['是否规范操作'].shape[0]
@@ -100,6 +100,7 @@ D2['日期'] = D2['日期'].dt.strftime('%Y-%m-%d')
 
 D2['业务员id'] = D2['业务员id'].astype(str)
 D2.rename(columns={'业务员id':'业务员ID'}, inplace=True)
+D2.rename(columns={'录入渠道':'所属渠道'}, inplace=True)
 D2.to_excel(data_dir+output_name2, sheet_name='sheet1', index=False)
 
 print("Finished")
